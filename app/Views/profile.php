@@ -39,9 +39,9 @@ img {
         <br>
         <img src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="saya">
         <p></p>
-        <input style="width:240px; height:30px" type="text" name="email" value="<?= $nama ?>" placeholder="Nama" disabled>
-        <br><br><br><input style="width:240px; height:30px" type="text" name="email" value="<?= $kelas ?>" placeholder="Kelas" disabled>
-        <br><br><br><input style="width:240px; height:30px" type="text" name="email" value="<?= $npm ?>" placeholder="NPM" disabled>
+        <input style="width:240px; height:30px" type="text" name="nama" value="<?= $nama ?>" placeholder="Nama" disabled>
+        <br><br><br><input style="width:240px; height:30px" type="text" name="kelas" value="<?= $kelas ?>" placeholder="Kelas" disabled>
+        <br><br><br><input style="width:240px; height:30px" type="text" name="npm" value="<?= $npm ?>" placeholder="NPM" disabled>
         <p>
         </p>
         <br>
