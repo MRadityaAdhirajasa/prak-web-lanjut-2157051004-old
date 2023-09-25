@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>createuser</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
 <style>
@@ -42,6 +44,18 @@ button{
 </style>
 
 <body>
+    
+    <?php if (session()->getFlashdata('errors')) : ?>
+        <div class="row">
+        <div class="col-md-5">
+            <div class="alert alert-danger" role="alert">
+                <?= session()->getFlashdata('errors') ?>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+
     <div class="data">
         <br>
         <br>
@@ -51,14 +65,26 @@ button{
                 <td>Nama</td>
                 <td>:</td>
                 <td>
-                    <input type="text" name="nama" id="nama">
+                    <input type="text" name="nama" id="nama" value="<?= old('nama') ?>">
                 </td>
             </tr>
             <tr>
                 <td>Kelas</td>
                 <td>:</td>
                 <td>
-                    <input type="text" name="kelas" id="kelas">
+                <select name="kelas" id="kelas">
+        <?php
+        foreach ($kelas as $item) {
+        ?>
+            <option value="<?= $item['id'] ?>">
+                <?= $item['nama_kelas']  ?>
+            </option>
+        <?php   
+        }
+        ?>
+    </select>
+
+                    <!-- <input type="text" name="kelas" id="kelas"> -->
                 </td>
             </tr>
             <tr>
