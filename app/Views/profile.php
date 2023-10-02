@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+<?= $this->extend('layouts/app') ?>
 
-</head>
+<?= $this->section('content') ?>
 
-<style>
-body{
-    background-color: #9fd3c7;
-}
-
-.data{
-    margin: auto;
-    border-radius: 25px;
-    width: 65%;
-    margin-top: 20px;
-    text-align: center;
-    justify-content: center;
-    background-color: white;
-}
-
-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid #555;
-}
-
-
-</style>
-
-<body>
+<div>
 
 <div class="data">
         <br>
@@ -67,5 +37,4 @@ img {
   </tr>
 </table> -->
 
-</body>
-</html>
+<?= $this->endSection() ?>
