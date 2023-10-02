@@ -1,49 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>createuser</title>
+<?= $this->extend('layouts/app') ?>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
+<?= $this->section('content') ?>
 
-<style>
-body{
-    background-color: #9fd3c7;
-}
-
-.data{
-    border-radius: 25px;
-    width: 65%;
-    margin-top: 20px;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    display: flex;
-}
-
-table{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    align-self: center;
-    /* border: 1px solid black; */
-}
-
-input{
-    width: 100%;
-}
-
-button{
-    width: 100%;
-}
-
-
-</style>
-
-<body>
+<div>
     
     <?php if (session()->getFlashdata('errors')) : ?>
         <div class="row">
@@ -76,7 +35,7 @@ button{
         <?php
         foreach ($kelas as $item) {
         ?>
-            <option value="<?= $item['id'] ?>">
+            <option class="option-class" value="<?= $item['id'] ?>">
                 <?= $item['nama_kelas']  ?>
             </option>
         <?php   
@@ -103,5 +62,7 @@ button{
 
     </div>
 
-</body>
-</html>
+    </div>
+
+<?= $this->endSection() ?>
+
