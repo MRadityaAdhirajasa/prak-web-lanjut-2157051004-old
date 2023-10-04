@@ -85,11 +85,22 @@ class UserController extends BaseController
             return redirect()->back()->withInput();
         }
 
+        $path = 'assets/img/';
+
+        $foto = $this->request->getFile('foto');
+
+        $name = $foto->getRandomName();
+
+        if ($foto->move($path, $name)) {
+            $foto = base_url($path . $name);
+        }
+
 
         $this->userModel->saveUser([
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
             'npm' => $this->request->getVar('npm'),
+            'foto' => $foto
         ]);
 
 
@@ -97,10 +108,22 @@ class UserController extends BaseController
             'nama' => $this->request->getVar('nama'),
             'kelas' => $this->request->getVar('kelas'),
             'npm' => $this->request->getVar('npm'),
+            'foto' => $foto,
             'title' => 'profile'
         ];
 
         // return view ('profile', $data);
         return redirect()->to('/user');
+    }
+
+    public function show($id){
+        $user = $this->userModel->getUser($id);
+
+        $data = [
+            'title' => 'profile',
+            'user' => $user,
+        ];
+
+        return view ('profile', $data);
     }
 }
