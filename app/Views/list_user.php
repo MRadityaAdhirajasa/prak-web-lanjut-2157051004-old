@@ -4,6 +4,7 @@
 
 <section>
   <h1>Data Mahasiswa</h1>
+  <a href="<?= base_url('user/create')?>" class="btn btn-primary">Tambah Data</a>
   <div class="tbl-header">
     <table class="list-table">
       <thead>
@@ -28,7 +29,11 @@
                 <td><?= $user['nama'] ?></td>
                 <td><?= $user['npm'] ?></td>
                 <td><?= $user['nama_kelas'] ?></td>
-                <td></td>
+                <td>
+                  <a href="<?= base_url('user/' . $user['id']) ?>" class="btn btn-info">Info</a>
+                  <a href="#" class="btn btn-warning">Edit</a>
+                  <a href="#" class="btn btn-danger">Hapus</a>
+                </td>
             </tr>
         <?php
         }

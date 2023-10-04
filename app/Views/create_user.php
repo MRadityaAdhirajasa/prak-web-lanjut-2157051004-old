@@ -18,13 +18,13 @@
     <div class="data">
         <br>
         <br>
-    <form action="<?= base_url('/user/store') ?>" method="post">
+    <form action="<?= base_url('/user/store') ?>" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>Nama</td>
                 <td>:</td>
                 <td>
-                    <input type="text" name="nama" id="nama" value="<?= old('nama') ?>">
+                    <input class="input-create" type="text" name="nama" id="nama" value="<?= old('nama') ?>">
                 </td>
             </tr>
             <tr>
@@ -50,7 +50,14 @@
                 <td>NPM</td>
                 <td>:</td>
                 <td>
-                    <input type="text" name="npm" id="npm">
+                    <input class="input-create" type="text" name="npm" id="npm">
+                </td>
+            </tr>
+            <tr>
+                <td>Foto</td>
+                <td>:</td>
+                <td>
+                    <input class="input-create" type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png">
                 </td>
             </tr>
         </table>

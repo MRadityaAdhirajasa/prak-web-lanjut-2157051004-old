@@ -50,9 +50,14 @@ img {
 }
 
 
-input{
+.input-create{
     width: 50%;
     float: left;
+}
+
+.input-profile{
+    text-align: center;
+    justify-content: center;
 }
 
 select{
